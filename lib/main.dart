@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_api/controllers/fav_controller.dart';
+import 'package:getx_api/firebase_options.dart';
 import 'package:getx_api/routes/route_name.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Get.put(FavController());
   runApp(MyApp());
 }

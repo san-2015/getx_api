@@ -299,7 +299,8 @@ class DetailPage extends GetView<DataController> {
                   children: [
                     GestureDetector(
                         onTap: () {
-                          favController.fav = !favController.fav;
+                          // favController.fav = !favController.fav;
+                         favController.setFav(!favController.fav, index.toString());
                           print("Fav value is ${favController.fav}");
                         },
                         child: Obx(
